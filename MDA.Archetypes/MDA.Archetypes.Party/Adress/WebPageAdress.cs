@@ -1,4 +1,7 @@
-﻿namespace MDA.Archetypes.Party.Adress
+﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.InteropServices;
+
+namespace MDA.Archetypes.Party.Adress
 {
     public class WebPageAdress : Address
     {
@@ -32,10 +35,5 @@
         {
             return new WebPageAdress(url, validFrom, validTo);
         }
-    }
-
-    public class TelecomAddress : Address
-    {
-
     }
 }
