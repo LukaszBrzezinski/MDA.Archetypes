@@ -36,4 +36,5 @@ namespace MDA.Archetypes.Party.Adress
             return new WebPageAdress(url, validFrom, validTo);
         }
     }
+
 }
