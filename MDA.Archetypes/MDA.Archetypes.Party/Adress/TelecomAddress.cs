@@ -19,9 +19,7 @@
             string areaCode, 
             string number, 
             string extension,
-            string physicalType,
-            DateOnly validFrom, 
-            DateOnly validTo) : base(validFrom, validTo)
+            string physicalType)
         {
             CountryCode = countryCode;
             NationalDirectDialingPrefix = nationalDirectDialingPrefix;
@@ -32,7 +30,7 @@
         }
 
         /// <summary>
-        /// Creates <see cref="TelecomAddress"/> valid from now thru infinity.
+        /// Creates <see cref="TelecomAddress"/>.
         /// </summary>
         /// <param name="countryCode">Country code ISO 3166</param>
         /// <param name="nationalDirectDialingPrefix">prefix to make call within a countrybetween different cities or areas.</param>
@@ -54,9 +52,7 @@
                 areaCode,
                 number,
                 extension,
-                physicalType,
-                DateOnly.FromDateTime(DateTime.Now),
-                DateOnly.MaxValue);
+                physicalType;
         }
     }
 }
