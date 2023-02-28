@@ -17,5 +17,11 @@ namespace MDA.Archetypes.Party
         public IEnumerable<Address> Addresses => _addresses.AsReadOnly();
         private List<Address> _addresses;
 
+        protected Party(PartyId id, string name, IEnumerable<Address> addresses)
+        {
+            Id = id;
+            Name = name;
+            _addresses = addresses.ToList();
+        }
     }
 }
