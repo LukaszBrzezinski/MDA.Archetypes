@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MDA.Archetypes.Party.Person
@@ -11,10 +10,13 @@ namespace MDA.Archetypes.Party.Person
     {
         public DateOnly DateOfBirth { get; }
         public IsoGender Gender { get; }
-        public Person(PartyId id, string name, IEnumerable<Address> addresses) : base(id, name, addresses)
+        private readonly Name _name;
+        public Person(PartyId id, Name name, IEnumerable<Address> addresses) : base(id, name.ToString(), addresses)
         {
+            _name = name;
         }
 
         
     }
+
 }
