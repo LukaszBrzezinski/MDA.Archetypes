@@ -2,6 +2,7 @@
 
 public enum RoundingStrategy
 {
+    Round,
     Up,
     Down,
     UpByStep,
