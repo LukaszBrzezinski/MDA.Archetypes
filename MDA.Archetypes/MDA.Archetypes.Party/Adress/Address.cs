@@ -1,7 +1,6 @@
-﻿namespace MDA.Archetypes.Party.Adress
+﻿namespace MDA.Archetypes.Party.Adress;
+
+public abstract class Address
 {
-    public abstract class Address
-    {
-        public abstract string GetAddressString();
-    }
+    public abstract string GetAddressString();
 }

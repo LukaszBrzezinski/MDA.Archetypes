@@ -1,27 +1,26 @@
 ﻿using MDA.Archetypes.Party.Adress;
 
-namespace MDA.Archetypes.Party
+namespace MDA.Archetypes.Party;
+
+public record PartyId(Guid Value)
 {
-    public record PartyId(Guid Value)
+    public static PartyId New()
     {
-        public static PartyId New()
-        {
-            return new PartyId(Guid.NewGuid());
-        }
+        return new PartyId(Guid.NewGuid());
     }
+}
 
-    public abstract class Party
+public abstract class Party
+{
+    public PartyId Id { get; }
+    public string Name { get; }
+    public IEnumerable<Address> Addresses => _addresses.AsReadOnly();
+    private List<Address> _addresses;
+
+    protected Party(PartyId id, string name, IEnumerable<Address> addresses)
     {
-        public PartyId Id { get; }
-        public string Name { get; }
-        public IEnumerable<Address> Addresses => _addresses.AsReadOnly();
-        private List<Address> _addresses;
-
-        protected Party(PartyId id, string name, IEnumerable<Address> addresses)
-        {
-            Id = id;
-            Name = name;
-            _addresses = addresses.ToList();
-        }
+        Id = id;
+        Name = name;
+        _addresses = addresses.ToList();
     }
 }
